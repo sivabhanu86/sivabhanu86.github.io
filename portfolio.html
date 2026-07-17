@@ -1,0 +1,625 @@
+
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patapanchula Siva Bhanu | AI/ML Engineer</title>
+<meta name="description" content="AI & ML Engineer specializing in Python, FastAPI, MongoDB, Scikit-learn, Deep Learning, and scalable intelligent systems. B.Tech AIML @ GCET Hyderabad.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#080e1d;
+  --navy2:#0c1526;
+  --navy3:#101d35;
+  --navy4:#152244;
+  --glass:rgba(255,255,255,0.04);
+  --glass2:rgba(255,255,255,0.07);
+  --gb:rgba(255,255,255,0.09);
+  --blue:#3b82f6;
+  --blue2:#60a5fa;
+  --cyan:#22d3ee;
+  --teal:#14b8a6;
+  --purple:#a78bfa;
+  --text:#e2e8f0;
+  --text2:#cbd5e1;
+  --muted:#64748b;
+  --muted2:#94a3b8;
+  --grad:linear-gradient(135deg,#3b82f6,#22d3ee);
+  --grad2:linear-gradient(135deg,#a78bfa,#3b82f6);
+  --grad3:linear-gradient(135deg,#22d3ee,#14b8a6);
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;overflow-x:hidden}
+ 
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+ 
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,14,29,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cyan);letter-spacing:0.08em;display:flex;align-items:center;gap:6px}
+.logo-dot{width:6px;height:6px;border-radius:50%;background:var(--grad);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--grad);transition:width 0.3s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--grad);color:#fff;padding:8px 20px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+ 
+/* ── WRAPPER ── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+ 
+/* ── SECTION HEADER ── */
+.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.sec-eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--cyan)}
+.sec-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:6px;line-height:1.15}
+.sec-sub{font-size:15px;color:var(--muted2);max-width:520px;margin-bottom:3.5rem}
+.sec-divider{width:48px;height:3px;background:var(--grad);border-radius:2px;margin-bottom:3rem}
+ 
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:64px;position:relative;overflow:hidden}
+.hero-bg-grad{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% -10%,rgba(59,130,246,0.13),transparent 65%),radial-gradient(ellipse 50% 50% at 85% 80%,rgba(34,211,238,0.07),transparent),radial-gradient(ellipse 40% 40% at 15% 70%,rgba(167,139,250,0.05),transparent)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);background-size:70px 70px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+.hero-content{position:relative;z-index:2;width:100%}
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);color:var(--cyan);padding:6px 14px;border-radius:30px;font-size:12px;font-weight:500;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;margin-bottom:1.5rem}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 1.5s infinite}
+h1.hero-name{font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem}
+.name-first{color:var(--text)}
+.name-last{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-role{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted2);margin-bottom:1.5rem;font-weight:400;display:flex;align-items:center;gap:10px}
+.hero-role-tag{background:var(--glass2);border:1px solid rgba(255,255,255,0.08);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:500;color:var(--blue2)}
+.hero-desc{font-size:15px;color:var(--muted2);max-width:540px;margin-bottom:2.5rem;line-height:1.85}
+.hero-desc strong{color:var(--text);font-weight:500}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3rem}
+.btn-grad{background:var(--grad);color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform 0.2s,opacity 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-grad:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text2);padding:11px 26px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,0.12);cursor:pointer;transition:border-color 0.2s,background 0.2s,transform 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline:hover{border-color:var(--blue);background:rgba(59,130,246,0.07);transform:translateY(-1px)}
+.hero-kpis{display:flex;gap:2.5rem;flex-wrap:wrap}
+.kpi{border-left:2px solid rgba(59,130,246,0.5);padding-left:1rem}
+.kpi-num{font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kpi-label{font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;font-weight:500}
+.hero-photo-wrap{position:relative;flex-shrink:0}
+.hero-photo-ring{width:260px;height:260px;border-radius:50%;padding:3px;background:var(--grad);position:relative}
+.hero-photo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--navy3)}
+.hero-photo-inner img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-photo-glow{position:absolute;inset:-15px;border-radius:50%;background:var(--grad);opacity:0.12;filter:blur(20px);z-index:-1}
+.hero-float-1,.hero-float-2{position:absolute;background:var(--glass2);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 14px;font-size:12px;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.hero-float-1{top:-20px;right:-30px;color:var(--cyan);animation:float 3s ease-in-out infinite}
+.hero-float-2{bottom:-10px;left:-40px;color:var(--purple);animation:float 3s ease-in-out infinite 1.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+ 
+/* ── ABOUT ── */
+#about{padding:6rem 0;background:var(--navy2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--muted2);font-size:15px;line-height:1.9;margin-bottom:1.1rem}
+.about-text p strong{color:var(--text);font-weight:600}
+.highlight-box{background:var(--glass);border:1px solid rgba(59,130,246,0.2);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin-top:1.5rem}
+.highlight-box p{margin:0;font-size:14px;color:var(--muted2)}
+.highlight-box strong{color:var(--blue2)}
+.info-card{background:var(--glass);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:1.75rem;overflow:hidden}
+.info-card-header{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.avatar-ring{width:68px;height:68px;border-radius:50%;padding:2px;background:var(--grad);flex-shrink:0}
+.avatar-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top}
+.info-card-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px}
+.info-card-role{font-size:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace}
+.info-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13.5px}
+.info-row:last-child{border-bottom:none}
+.info-ico{width:30px;height:30px;border-radius:7px;background:rgba(59,130,246,0.12);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.info-lbl{color:var(--muted);font-size:12px;min-width:72px}
+.info-val{color:var(--text2);font-size:13px}
+.info-val a{color:var(--blue2);text-decoration:none}
+ 
+/* ── SKILLS ── */
+#skills{padding:6rem 0}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.skill-card{background:var(--glass);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.5rem;transition:all 0.25s;position:relative;overflow:hidden}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity 0.25s}
+.skill-card:nth-child(1)::before{background:var(--grad)}
+.skill-card:nth-child(2)::before{background:var(--grad2)}
+.skill-card:nth-child(3)::before{background:var(--grad3)}
+.skill-card:nth-child(4)::before{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.skill-card:nth-child(5)::before{background:linear-gradient(135deg,#10b981,#3b82f6)}
+.skill-card:nth-child(6)::before{background:linear-gradient(135deg,#ec4899,#a78bfa)}
+.skill-card:hover{border-color:rgba(59,130,246,0.3);transform:translateY(-3px)}
+.skill-card:hover::before{opacity:1}
+.skill-icon-wrap{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:1rem}
+.skill-cat{font-size:10px;color:var(--cyan);letter-spacing:0.18em;font-family:'JetBrains Mono',monospace;text-transform:uppercase;margin-bottom:4px}
+.skill-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.18);color:var(--blue2);padding:4px 10px;border-radius:20px;font-weight:500;letter-spacing:0.02em}
+.tag.teal{background:rgba(20,184,166,0.08);border-color:rgba(20,184,166,0.2);color:var(--teal)}
+.tag.purple{background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.2);color:var(--purple)}
+.tag.amber{background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.2);color:#fbbf24}
+ 
+/* ── PROJECTS ── */
+#projects{padding:6rem 0;background:var(--navy2)}
+.project-card{background:var(--navy3);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:2rem 2.25rem;margin-bottom:1.5rem;transition:border-color 0.25s;position:relative;overflow:hidden}
+.project-card.featured{border-color:rgba(59,130,246,0.3)}
+.project-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--grad)}
+.feat-badge{position:absolute;top:1.25rem;right:1.25rem;font-size:10px;background:var(--grad);color:#fff;padding:4px 12px;border-radius:30px;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;font-weight:600}
+.project-card:hover{border-color:rgba(59,130,246,0.4)}
+.proj-header{display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1rem}
+.proj-num-badge{width:36px;height:36px;border-radius:8px;background:var(--glass2);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted2);flex-shrink:0;font-weight:600}
+.proj-meta{flex:1}
+.proj-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:4px}
+.proj-title{font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.3}
+.proj-tech-line{font-size:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace}
+.proj-desc{font-size:14px;color:var(--muted2);line-height:1.8;margin-bottom:1.25rem}
+.proj-bullets{list-style:none;padding:0;margin-bottom:1.25rem}
+.proj-bullets li{font-size:13.5px;color:var(--muted2);padding:5px 0 5px 1.5rem;position:relative;line-height:1.7}
+.proj-bullets li::before{content:'▸';position:absolute;left:0;color:var(--blue);font-size:11px;top:7px}
+.proj-bullets li strong{color:var(--text2);font-weight:600}
+.stack-row{display:flex;flex-wrap:wrap;gap:6px}
+.stag{font-size:11px;background:rgba(34,211,238,0.07);border:1px solid rgba(34,211,238,0.18);color:var(--cyan);padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;font-weight:500}
+ 
+/* ── EDUCATION ── */
+#education{padding:6rem 0}
+.edu-timeline{position:relative;padding-left:2.5rem}
+.edu-timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:0;width:1px;background:linear-gradient(180deg,var(--blue) 0%,var(--cyan) 60%,transparent 100%)}
+.edu-item{position:relative;margin-bottom:2.5rem}
+.edu-dot{position:absolute;left:-2.5rem;top:6px;width:16px;height:16px;border-radius:50%;background:var(--grad);border:3px solid var(--navy);box-shadow:0 0 0 4px rgba(59,130,246,0.2)}
+.edu-card{background:var(--glass);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem}
+.edu-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:0.12em;margin-bottom:4px}
+.edu-degree{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.edu-inst{font-size:13px;color:var(--muted2);margin-bottom:8px}
+.edu-score{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:var(--blue2);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'JetBrains Mono',monospace}
+ 
+/* ── CERTIFICATIONS ── */
+#certifications{padding:6rem 0;background:var(--navy2)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.cert-card{background:var(--glass);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s,transform 0.2s}
+.cert-card:hover{border-color:rgba(59,130,246,0.3);transform:translateY(-2px)}
+.cert-ico{width:44px;height:44px;border-radius:10px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.cert-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.4}
+.cert-meta{font-size:12px;color:var(--muted);line-height:1.6}
+.cert-badge{display:inline-block;margin-top:6px;font-size:11px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.2);color:var(--teal);padding:2px 9px;border-radius:20px}
+ 
+/* ── CONTACT ── */
+#contact{padding:6rem 0}
+.contact-inner{max-width:640px;margin:0 auto;text-align:center}
+.contact-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem}
+.contact-sub{color:var(--muted2);font-size:15px;margin-bottom:2.5rem;line-height:1.8}
+.contact-card{background:var(--navy3);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:2.5rem}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:2rem}
+.clink{display:flex;align-items:center;gap:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.08);color:var(--text2);text-decoration:none;padding:10px 18px;border-radius:10px;font-size:14px;transition:all 0.2s}
+.clink:hover{border-color:var(--blue);background:rgba(59,130,246,0.08);color:var(--text)}
+.clink-ico{font-size:16px}
+.availability-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.2);color:var(--teal);padding:8px 18px;border-radius:30px;font-size:13px;font-weight:500}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 1.5s infinite}
+ 
+/* ── FOOTER ── */
+footer{padding:2rem;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05)}
+footer span{color:var(--blue2)}
+ 
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+ 
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-photo-wrap{order:-1;margin:0 auto}
+  .hero-photo-ring{width:180px;height:180px}
+  .hero-float-1,.hero-float-2{display:none}
+  .hero-kpis{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  nav .nav-links,.nav-cta{display:none}
+  .hero-btns{justify-content:center}
+  .hero-role{justify-content:center;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      <span style="font-family:'JetBrains Mono',monospace">siva<span style="color:#fff">.</span>dev</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certs</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+ 
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grad"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Open to Internships &amp; AI/ML Roles
+        </div>
+        <h1 class="hero-name">
+          <span class="name-first">Patapanchula<br></span>
+          <span class="name-last">Siva Bhanu</span>
+        </h1>
+        <div class="hero-role">
+          <span class="hero-role-tag">AI/ML Engineer</span>
+          <span style="color:var(--muted)">·</span>
+          <span class="hero-role-tag">Backend Developer</span>
+          <span style="color:var(--muted)">·</span>
+          <span class="hero-role-tag">B.Tech AIML '27</span>
+        </div>
+        <p class="hero-desc">
+          Building <strong>production-ready intelligent systems</strong> — from Trie-indexed high-performance APIs to end-to-end ML classification pipelines. Proficient in <strong>Python, FastAPI, MongoDB, Scikit-learn</strong> and scalable data-driven architectures.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-grad">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            View Projects
+          </a>
+          <a href="mailto:sivabhanu7006@gmail.com" class="btn-outline">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Get in Touch
+          </a>
+        </div>
+        <div class="hero-kpis">
+          <div class="kpi"><div class="kpi-num">8.66</div><div class="kpi-label">CGPA</div></div>
+          <div class="kpi"><div class="kpi-num">4+</div><div class="kpi-label">Projects</div></div>
+          <div class="kpi"><div class="kpi-num">5</div><div class="kpi-label">Languages</div></div>
+          <div class="kpi"><div class="kpi-num">3+</div><div class="kpi-label">Certifications</div></div>
+        </div>
+      </div>
+ 
+      <!-- PHOTO -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring">
+          <div class="hero-photo-inner">
+            <img src="data:image/jpeg;base64,PHOTO_B64_PLACEHOLDER" alt="Siva Bhanu">
+          </div>
+        </div>
+        <div class="hero-photo-glow"></div>
+        <div class="hero-float-1">⚡ FastAPI + Trie</div>
+        <div class="hero-float-2">🤖 ML Engineer</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-eyebrow">01 / About</div>
+    <h2 class="sec-title reveal">Who I Am</h2>
+    <div class="sec-divider"></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a <strong>B.Tech student specializing in Artificial Intelligence &amp; Machine Learning</strong> at Geethanjali College of Engineering and Technology, Hyderabad — maintaining a <strong>CGPA of 8.66</strong> while building real-world systems.</p>
+        <p>My engineering focus lies at the intersection of <strong>data structures, applied mathematics, and production ML systems</strong> — architecting solutions that are not just functionally correct but algorithmically efficient and horizontally scalable.</p>
+        <p>I've shipped projects ranging from a <strong>Trie-indexed contact manager with O(k) prefix search via FastAPI + MongoDB</strong> to supervised <strong>classification pipelines for student performance prediction</strong> using ensemble learning techniques. I enjoy translating mathematical foundations into deployable software.</p>
+        <div class="highlight-box">
+          <p>Actively seeking <strong>AI/ML internships, research assistantships, and collaborative open-source projects</strong> where I can contribute and grow alongside industry practitioners.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="avatar-ring">
+              <img src="data:image/jpeg;base64,PHOTO_B64_PLACEHOLDER" alt="Siva Bhanu">
+            </div>
+            <div>
+              <div class="info-card-name">Patapanchula Siva Bhanu</div>
+              <div class="info-card-role">AI/ML Engineer · GCET '27</div>
+            </div>
+          </div>
+          <div class="info-row"><div class="info-ico">📍</div><div class="info-lbl">Location</div><div class="info-val">Hyderabad, India</div></div>
+          <div class="info-row"><div class="info-ico">🎓</div><div class="info-lbl">Degree</div><div class="info-val">B.Tech AIML (2023–2027)</div></div>
+          <div class="info-row"><div class="info-ico">📊</div><div class="info-lbl">CGPA</div><div class="info-val" style="color:var(--blue2);font-weight:600">8.66 / 10.0</div></div>
+          <div class="info-row"><div class="info-ico">💼</div><div class="info-lbl">Status</div><div class="info-val" style="color:#4ade80">● Open to Opportunities</div></div>
+          <div class="info-row"><div class="info-ico">✉️</div><div class="info-lbl">Email</div><div class="info-val"><a href="mailto:sivabhanu7006@gmail.com">sivabhanu7006@gmail.com</a></div></div>
+          <div class="info-row"><div class="info-ico">📞</div><div class="info-lbl">Phone</div><div class="info-val">+91 80746 12507</div></div>
+          <div class="info-row"><div class="info-ico">🌐</div><div class="info-lbl">Languages</div><div class="info-val">English, Telugu, Hindi</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-eyebrow">02 / Technical Skills</div>
+    <h2 class="sec-title reveal">Core Competencies</h2>
+    <p class="sec-sub reveal">A curated stack of technologies I actively use to design, train, and deploy AI-powered systems.</p>
+    <div class="skills-grid">
+ 
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap" style="background:rgba(59,130,246,0.12)">🤖</div>
+        <div class="skill-cat">Machine Learning</div>
+        <div class="skill-title">ML / AI Pipeline</div>
+        <div class="tags">
+          <span class="tag">Scikit-learn</span><span class="tag">Supervised Learning</span><span class="tag">Classification</span><span class="tag">Regression</span><span class="tag">Clustering</span><span class="tag">Feature Engineering</span><span class="tag">Cross-Validation</span><span class="tag">Hyperparameter Tuning</span>
+        </div>
+      </div>
+ 
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap" style="background:rgba(167,139,250,0.12)">📊</div>
+        <div class="skill-cat">Data Science</div>
+        <div class="skill-title">Data Engineering &amp; Analysis</div>
+        <div class="tags">
+          <span class="tag purple">NumPy</span><span class="tag purple">Pandas</span><span class="tag purple">Data Preprocessing</span><span class="tag purple">EDA</span><span class="tag purple">Normalization</span><span class="tag purple">Imputation</span>
+        </div>
+      </div>
+ 
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap" style="background:rgba(20,184,166,0.12)">⚡</div>
+        <div class="skill-cat">Backend Engineering</div>
+        <div class="skill-title">API &amp; Server Development</div>
+        <div class="tags">
+          <span class="tag teal">FastAPI</span><span class="tag teal">REST API Design</span><span class="tag teal">Async Python</span><span class="tag teal">CRUD Operations</span><span class="tag teal">JDBC</span><span class="tag teal">API Authentication</span>
+        </div>
+      </div>
+ 
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap" style="background:rgba(245,158,11,0.1)">🗄️</div>
+        <div class="skill-cat">Databases</div>
+        <div class="skill-title">Data Persistence &amp; Storage</div>
+        <div class="tags">
+          <span class="tag amber">MongoDB</span><span class="tag amber">MySQL</span><span class="tag amber">NoSQL</span><span class="tag amber">Indexing Strategies</span><span class="tag amber">Query Optimization</span><span class="tag amber">Schema Design</span>
+        </div>
+      </div>
+ 
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap" style="background:rgba(16,185,129,0.1)">🌳</div>
+        <div class="skill-cat">DSA &amp; Algorithms</div>
+        <div class="skill-title">Data Structures &amp; Algorithms</div>
+        <div class="tags">
+          <span class="tag">Trie</span><span class="tag">AVL Trees</span><span class="tag">Dijkstra's Algorithm</span><span class="tag">Graph Theory</span><span class="tag">Dynamic Programming</span><span class="tag">Time Complexity</span>
+        </div>
+      </div>
+ 
+      <div class="skill-card reveal">
+        <div class="skill-icon-wrap" style="background:rgba(236,72,153,0.1)">💻</div>
+        <div class="skill-cat">Languages</div>
+        <div class="skill-title">Programming Languages</div>
+        <div class="tags">
+          <span class="tag purple">Python</span><span class="tag purple">Java</span><span class="tag purple">JavaScript</span><span class="tag purple">C</span><span class="tag purple">C++</span>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-eyebrow">03 / Projects</div>
+    <h2 class="sec-title reveal">Engineering Portfolio</h2>
+    <p class="sec-sub reveal">End-to-end systems built from mathematical foundations to deployed, working software.</p>
+ 
+    <!-- P1 -->
+    <div class="project-card featured reveal">
+      <span class="feat-badge">⭐ Featured</span>
+      <div class="proj-header">
+        <div class="proj-num-badge">01</div>
+        <div class="proj-meta">
+          <div class="proj-year">2025 · Python · Backend · Algorithms</div>
+          <div class="proj-title">TrieContact — High-Performance Contact Manager</div>
+          <div class="proj-tech-line">Trie Indexing &nbsp;/&nbsp; FastAPI &nbsp;/&nbsp; MongoDB &nbsp;/&nbsp; REST API</div>
+        </div>
+      </div>
+      <p class="proj-desc">Architected a high-performance contact management system leveraging a <strong>Trie (Prefix Tree) data structure</strong> to achieve O(k) prefix-based search and real-time autocomplete — backed by an async <strong>FastAPI REST layer</strong> and <strong>MongoDB persistent storage</strong> with optimized indexing strategies.</p>
+      <ul class="proj-bullets">
+        <li><strong>O(k) time complexity</strong> prefix lookups using Trie data structure — sub-millisecond contact retrieval across large-scale datasets</li>
+        <li>Designed and implemented <strong>RESTful API endpoints</strong> using FastAPI with async request handling for high-throughput CRUD operations</li>
+        <li>Applied <strong>MongoDB indexing strategies</strong> (compound indexes, sparse indexes) to optimize persistent query performance at scale</li>
+        <li>Built a <strong>real-time autocomplete engine</strong> integrating Trie traversal with database persistence, decoupling in-memory speed from storage durability</li>
+      </ul>
+      <div class="stack-row">
+        <span class="stag">Python</span><span class="stag">FastAPI</span><span class="stag">MongoDB</span><span class="stag">Trie</span><span class="stag">REST API</span><span class="stag">Async I/O</span><span class="stag">NoSQL</span>
+      </div>
+    </div>
+ 
+    <!-- P2 -->
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <div class="proj-num-badge">02</div>
+        <div class="proj-meta">
+          <div class="proj-year">2024 · Python · Machine Learning · Classification</div>
+          <div class="proj-title">Student Performance Prediction — Supervised ML Pipeline</div>
+          <div class="proj-tech-line">Scikit-learn &nbsp;/&nbsp; Pandas &nbsp;/&nbsp; NumPy &nbsp;/&nbsp; Ensemble Learning</div>
+        </div>
+      </div>
+      <p class="proj-desc">Developed an end-to-end <strong>supervised learning pipeline</strong> to predict student academic outcomes using ensemble classification algorithms — from raw data ingestion through feature engineering, model selection, and validation.</p>
+      <ul class="proj-bullets">
+        <li>Implemented <strong>Decision Tree and Random Forest classifiers</strong> with ensemble bagging for improved generalization and reduced variance</li>
+        <li>Executed full <strong>data preprocessing pipeline</strong>: missing value imputation, feature normalization (MinMaxScaler/StandardScaler), and categorical encoding</li>
+        <li>Applied <strong>k-fold cross-validation</strong> and grid-search hyperparameter tuning to optimize model accuracy and prevent overfitting</li>
+        <li>Conducted <strong>exploratory data analysis (EDA)</strong> to identify feature correlations and drive informed feature selection decisions</li>
+      </ul>
+      <div class="stack-row">
+        <span class="stag">Python</span><span class="stag">Scikit-learn</span><span class="stag">Pandas</span><span class="stag">NumPy</span><span class="stag">Random Forest</span><span class="stag">Cross-Validation</span>
+      </div>
+    </div>
+ 
+    <!-- P3 -->
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <div class="proj-num-badge">03</div>
+        <div class="proj-meta">
+          <div class="proj-year">2024 · Java · Graph Algorithms · Optimization</div>
+          <div class="proj-title">Waste Management Route Optimizer — Graph Pathfinding</div>
+          <div class="proj-tech-line">Dijkstra's Algorithm &nbsp;/&nbsp; Graph Theory &nbsp;/&nbsp; Java</div>
+        </div>
+      </div>
+      <p class="proj-desc">Engineered a <strong>shortest-path route optimization system</strong> for municipal waste collection vehicles by modelling city road networks as weighted directed graphs and applying Dijkstra's algorithm for minimum-cost traversal.</p>
+      <ul class="proj-bullets">
+        <li>Modelled city infrastructure as a <strong>weighted directed graph</strong> with edge weights representing travel distance/time between collection nodes</li>
+        <li>Implemented <strong>Dijkstra's shortest-path algorithm</strong> with a priority queue (min-heap) for O((V + E) log V) time complexity</li>
+        <li>Achieved measurable reduction in <strong>total route distance and fuel cost</strong> compared to naive sequential traversal</li>
+      </ul>
+      <div class="stack-row">
+        <span class="stag">Java</span><span class="stag">Graph Theory</span><span class="stag">Dijkstra</span><span class="stag">Min-Heap</span><span class="stag">Optimization</span>
+      </div>
+    </div>
+ 
+    <!-- P4 -->
+    <div class="project-card reveal">
+      <div class="proj-header">
+        <div class="proj-num-badge">04</div>
+        <div class="proj-meta">
+          <div class="proj-year">2023 · Java · Full-Stack · Database Systems</div>
+          <div class="proj-title">Voting Management System — Secure GUI Application</div>
+          <div class="proj-tech-line">Java Swing &nbsp;/&nbsp; JDBC &nbsp;/&nbsp; MySQL &nbsp;/&nbsp; RBAC</div>
+        </div>
+      </div>
+      <p class="proj-desc">Designed and implemented a <strong>secure, GUI-based election management system</strong> with role-based access control, ACID-compliant database transactions, and ballot integrity enforcement.</p>
+      <ul class="proj-bullets">
+        <li>Implemented <strong>Role-Based Access Control (RBAC)</strong> — distinct admin and voter roles with enforced privilege separation</li>
+        <li>Engineered <strong>duplicate vote prevention</strong> using unique constraints and transaction-level locking via JDBC and MySQL</li>
+        <li>Built end-to-end <strong>JDBC database integration</strong> for persistent, queryable vote records with real-time result aggregation</li>
+      </ul>
+      <div class="stack-row">
+        <span class="stag">Java</span><span class="stag">JDBC</span><span class="stag">MySQL</span><span class="stag">Swing</span><span class="stag">RBAC</span><span class="stag">ACID</span>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-eyebrow">04 / Education</div>
+    <h2 class="sec-title reveal">Academic Background</h2>
+    <div class="sec-divider"></div>
+    <div class="edu-timeline">
+ 
+      <div class="edu-item reveal">
+        <div class="edu-dot"></div>
+        <div class="edu-card">
+          <div class="edu-year">2023 – 2027 &nbsp;·&nbsp; Pursuing</div>
+          <div class="edu-degree">B.Tech — Artificial Intelligence &amp; Machine Learning</div>
+          <div class="edu-inst">Geethanjali College of Engineering and Technology, Hyderabad</div>
+          <span class="edu-score">🏆 CGPA: 8.66 / 10.0</span>
+        </div>
+      </div>
+ 
+      <div class="edu-item reveal">
+        <div class="edu-dot" style="background:var(--grad2)"></div>
+        <div class="edu-card">
+          <div class="edu-year">2022 &nbsp;·&nbsp; CBSE Class 12</div>
+          <div class="edu-degree">Higher Secondary Education</div>
+          <div class="edu-inst">Jawahar Navodaya Vidyalaya, Veleru, Krishna (A.P.)</div>
+          <span class="edu-score">📈 84.6%</span>
+        </div>
+      </div>
+ 
+      <div class="edu-item reveal">
+        <div class="edu-dot" style="background:var(--grad3)"></div>
+        <div class="edu-card">
+          <div class="edu-year">2020 &nbsp;·&nbsp; CBSE Class 10</div>
+          <div class="edu-degree">Secondary Education</div>
+          <div class="edu-inst">Jawahar Navodaya Vidyalaya, Veleru, Krishna (A.P.)</div>
+          <span class="edu-score">📈 88.2%</span>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-eyebrow">05 / Certifications</div>
+    <h2 class="sec-title reveal">Credentials &amp; Training</h2>
+    <div class="sec-divider"></div>
+    <div class="cert-grid">
+ 
+      <div class="cert-card reveal">
+        <div class="cert-ico">📜</div>
+        <div>
+          <div class="cert-title">Design and Analysis of Algorithms</div>
+          <div class="cert-meta">NPTEL — Indian Institute of Technology<br>Jan – Mar 2025</div>
+          <span class="cert-badge">Score: 53/100</span>
+        </div>
+      </div>
+ 
+      <div class="cert-card reveal">
+        <div class="cert-ico">⛓️</div>
+        <div>
+          <div class="cert-title">Blockchain Technology Bootcamp</div>
+          <div class="cert-meta">IDS Inc · Bharat Blockchain Network<br>November 2024</div>
+          <span class="cert-badge">Verified</span>
+        </div>
+      </div>
+ 
+      <div class="cert-card reveal">
+        <div class="cert-ico">🕸️</div>
+        <div>
+          <div class="cert-title">Graph Theory Programming Camp</div>
+          <div class="cert-meta">AlgoUniversity<br>Competitive Programming Track</div>
+          <span class="cert-badge">Completed</span>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <div class="sec-eyebrow" style="justify-content:center">06 / Contact</div>
+      <h2 class="contact-title">Let's Build Something</h2>
+      <p class="contact-sub">Looking for AI/ML internships, research collaborations, and challenging engineering problems to solve. Currently <strong style="color:var(--teal)">available for opportunities</strong>.</p>
+      <div class="contact-card">
+        <div class="availability-badge" style="margin:0 auto 1.75rem;display:inline-flex">
+          <span class="avail-dot"></span>
+          Available — Open to offers
+        </div>
+        <div class="contact-links">
+          <a href="mailto:sivabhanu7006@gmail.com" class="clink">
+            <span class="clink-ico">✉️</span>
+            sivabhanu7006@gmail.com
+          </a>
+          <a href="tel:+918074612507" class="clink">
+            <span class="clink-ico">📞</span>
+            +91 80746 12507
+          </a>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:0.5rem">Based in Hyderabad, India &nbsp;·&nbsp; Open to remote and hybrid roles</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  Crafted with precision · <span>Patapanchula Siva Bhanu</span> · AI/ML Engineer · Hyderabad, India
+</footer>
+ 
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
+ 
+
